@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "735508976387",
+    "project_id": "final-project-jp",
+    "storage_bucket": "final-project-jp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:735508976387:android:53106ef93e899f1da70f36",
+        "android_client_info": {
+          "package_name": "com.example.squip"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "735508976387-9251rtu0m7dfs8pv0h1h6i5qm1mvpp4t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCW9WUQOZEqgoogoEguL-VCdVooeDSxMDc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "735508976387-9251rtu0m7dfs8pv0h1h6i5qm1mvpp4t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
