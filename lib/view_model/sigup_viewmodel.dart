@@ -53,11 +53,6 @@ class SignUpViewModel extends BaseViewModel {
             .then((value) => print("User Added"))
             .catchError((error) => print("Failed to add user: $error"));
       }
-
-      // firestore.collection('users').doc(UserCredential.user.uid).set({
-      //   "email": email.text,
-      //   "password": password.text,
-      // });
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
         displayErrorMessage("The password provided is too weak.");

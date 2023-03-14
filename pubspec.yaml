@@ -44,6 +44,7 @@ dependencies:
   fluttertoast: ^8.2.1
   flutter_phone_direct_caller: ^2.1.1
   url_launcher: ^6.1.10
+  dropdown_button2: ^2.0.0
 
 
 dev_dependencies:

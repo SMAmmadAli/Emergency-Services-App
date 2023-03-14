@@ -12,6 +12,8 @@ class PoliceViewModel extends BaseViewModel {
   }
 
   AudioCall() async {
-    await FlutterPhoneDirectCaller.callNumber("+923308465535");
+    const number = '03308465535'; //set the number here
+    bool? res = await FlutterPhoneDirectCaller.callNumber(number);
+    // await FlutterPhoneDirectCaller.callNumber("+923308465535");
   }
 }

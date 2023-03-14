@@ -100,7 +100,7 @@ class StackedRouter extends _i1.RouterBase {
     },
     _i6.FireBrigadeView: (data) {
       return MaterialPageRoute<dynamic>(
-        builder: (context) => const _i6.FireBrigadeView(),
+        builder: (context) => _i6.FireBrigadeView(),
         settings: data,
       );
     },
