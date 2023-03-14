@@ -35,11 +35,6 @@ class LoginPage extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 10.0),
                 child: Row(
                   children: [
-                    // Image(
-                    //   image: AssetImage(MyImage.tree),
-                    //   width: 30,
-                    //   height: 30,
-                    // ),
                     const SizedBox(
                       width: 10,
                     ),
@@ -69,6 +64,7 @@ class LoginPage extends StatelessWidget {
                 text: MyText.email,
                 obscureText: false,
                 myController: viewModel.email,
+                hintext: "Enter email",
               ),
               const SizedBox(
                 height: 20,
@@ -77,6 +73,7 @@ class LoginPage extends StatelessWidget {
                 text: MyText.password,
                 obscureText: true,
                 myController: viewModel.password,
+                hintext: "Enter password",
               ),
               const SizedBox(
                 height: 30,

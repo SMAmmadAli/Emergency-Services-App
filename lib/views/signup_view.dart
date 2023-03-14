@@ -72,6 +72,7 @@ class SignUpPage extends StatelessWidget {
                   text: "Email",
                   obscureText: false,
                   myController: viewModel.email,
+                  hintext: "Email",
                 ),
                 const SizedBox(
                   height: 20,
@@ -80,6 +81,7 @@ class SignUpPage extends StatelessWidget {
                   text: "Password",
                   obscureText: true,
                   myController: viewModel.password,
+                  hintext: "Password",
                 ),
                 const SizedBox(
                   height: 30,

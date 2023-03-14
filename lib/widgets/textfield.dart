@@ -5,11 +5,13 @@ class MyTextField extends StatelessWidget {
   final String text;
   final bool obscureText;
   final TextEditingController myController;
+  final String hintext;
   const MyTextField(
       {super.key,
       required this.text,
       required this.obscureText,
-      required this.myController});
+      required this.myController,
+      required this.hintext});
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +43,7 @@ class MyTextField extends StatelessWidget {
             obscureText: obscureText,
             decoration: InputDecoration(
                 border: InputBorder.none,
-                hintText: "Masukkan Password",
+                hintText: hintext,
                 hintStyle: TextStyle(
                     color: MyColor.green,
                     fontSize: 16,

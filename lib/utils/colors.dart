@@ -15,4 +15,6 @@ class MyColor {
   static Color black = const Color(0xff111111);
   static Color yellow = const Color(0xffFCCC1F);
   static Color dartGreen = const Color(0xff002140);
+  static Color greyBlack = Colors.black87;
+  static Color lightBlack = Colors.black54;
 }

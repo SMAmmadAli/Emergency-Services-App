@@ -1,3 +1,6 @@
+import 'dart:html';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +16,8 @@ class HomeViewModel extends BaseViewModel {
   TextEditingController password = TextEditingController();
 
   final navigationService = locator<NavigationService>();
+  FirebaseAuth auth = FirebaseAuth.instance;
+  final userRef = FirebaseDatabase.instance.ref('users');
 
   navigateToSignUp() {
     navigationService.navigateToSignUpPage();
@@ -22,25 +27,29 @@ class HomeViewModel extends BaseViewModel {
     navigationService.navigateToUserHomeView();
   }
 
-  FirebaseAuth auth = FirebaseAuth.instance;
-
-  DatabaseReference userRef = FirebaseDatabase.instance.ref().child('users');
-
   login(context) async {
     try {
       final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: email.text,
         password: password.text,
       );
-      if (userRef != null) {
-//         userRef.child('users').once().then((DataSnapshot snapshot) {
+      // User? user = FirebaseAuth.instance.currentUser;
+      // var kk = FirebaseFirestore.instance
+      //     .collection('users')
+      //     .doc(user!.uid)
+      //     .get()
+      //     .then((DocumentSnapshot documentSnapshot) {
+      //   if (documentSnapshot.exists) {
+      //     if (documentSnapshot.get('role') == "user") {
+      //       navigateToHomeView();
+      //       print("Hogya");
+      //     } else {
+      //       navigateToHomeView();
+      //       print("nahi Hogya");
+      //     }
+      //   }
+      // });
 
-// });
-        // userRef.child("users").once().then(DataSnapshot snaps){
-        // };
-      }
-      // Navigator.pushReplacement(context,
-      //     MaterialPageRoute(builder: (context) => const UserHomeView()));
       navigateToHomeView();
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
