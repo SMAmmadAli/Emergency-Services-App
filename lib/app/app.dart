@@ -1,3 +1,5 @@
+import 'package:squip/services/back_screen_service.dart';
+import 'package:squip/views/admin_homeview.dart';
 import 'package:squip/views/login_view.dart';
 import 'package:squip/views/signup_view.dart';
 import 'package:squip/views/user_homeview.dart';
@@ -14,8 +16,10 @@ import '../views/police_view.dart';
   MaterialRoute(page: UserHomeView),
   MaterialRoute(page: PoliceView),
   MaterialRoute(page: FireBrigadeView),
-  MaterialRoute(page: AmbulanceView)
+  MaterialRoute(page: AmbulanceView),
+  MaterialRoute(page: AdminHomeView),
 ], dependencies: [
-  Singleton(classType: NavigationService)
+  Singleton(classType: NavigationService),
+  LazySingleton(classType: NavigateToBack)
 ])
 class App {}

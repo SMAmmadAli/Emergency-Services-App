@@ -1,6 +1,4 @@
-import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:squip/utils/colors.dart';
 import 'package:squip/view_model/firebrigade_viewmodel.dart';
 import 'package:squip/widgets/user_form.dart';
@@ -41,7 +39,14 @@ class FireBrigadeView extends StatelessWidget {
                       )),
                 ],
               ),
-              body: UserForm());
+              body: UserForm(
+                items: viewModel.itemsList,
+                myController1: viewModel.name,
+                myController2: viewModel.location,
+                added: () {
+                  viewModel.addData();
+                },
+              ));
         });
   }
 }

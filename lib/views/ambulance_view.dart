@@ -18,7 +18,8 @@ class AmbulanceView extends StatelessWidget {
               appBar: AppBar(
                 leading: IconButton(
                     onPressed: () {
-                      viewModel.navigateToBack();
+                      // viewModel.navigateToBack();
+                      viewModel.goBack.navigateToBack();
                     },
                     icon: Icon(
                       Icons.arrow_back,
@@ -41,7 +42,14 @@ class AmbulanceView extends StatelessWidget {
                       )),
                 ],
               ),
-              body: UserForm());
+              body: UserForm(
+                items: viewModel.itemsList,
+                myController1: viewModel.name,
+                myController2: viewModel.location,
+                added: () {
+                  viewModel.addData();
+                },
+              ));
         });
   }
 }

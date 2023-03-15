@@ -41,7 +41,14 @@ class PoliceView extends StatelessWidget {
                       )),
                 ],
               ),
-              body: UserForm());
+              body: UserForm(
+                items: viewModel.itemsList,
+                myController1: viewModel.name,
+                myController2: viewModel.location,
+                added: () {
+                  viewModel.addData();
+                },
+              ));
         });
   }
 }

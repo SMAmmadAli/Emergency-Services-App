@@ -2,18 +2,19 @@ import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 
 class UserForm extends StatelessWidget {
-  final List<String> genderItems = [
-    'Cylinder Blast',
-    'Short Circuit',
-    'Flammable liquids',
-    'Solid materials',
-    'Electrical Fires',
-  ];
-
+  final Function added;
+  final List<String> items;
   String? selectedValue;
+  final TextEditingController myController1;
+  final TextEditingController myController2;
 
   final _formKey = GlobalKey<FormState>();
-  UserForm({super.key});
+  UserForm(
+      {super.key,
+      required this.items,
+      required this.myController1,
+      required this.myController2,
+      required this.added});
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +26,7 @@ class UserForm extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextFormField(
+              controller: myController1,
               decoration: InputDecoration(
                 contentPadding: const EdgeInsets.symmetric(
                   horizontal: 20,
@@ -39,6 +41,7 @@ class UserForm extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             TextFormField(
+              controller: myController2,
               decoration: InputDecoration(
                 contentPadding: const EdgeInsets.symmetric(
                   horizontal: 20,
@@ -66,7 +69,7 @@ class UserForm extends StatelessWidget {
                 'Select the condition of fire',
                 style: TextStyle(fontSize: 14),
               ),
-              items: genderItems
+              items: items
                   .map((item) => DropdownMenuItem<String>(
                         value: item,
                         child: Text(
@@ -109,6 +112,7 @@ class UserForm extends StatelessWidget {
             const SizedBox(height: 30),
             TextButton(
               onPressed: () {
+                added();
                 if (_formKey.currentState!.validate()) {
                   _formKey.currentState!.save();
                 }
