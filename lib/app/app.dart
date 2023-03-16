@@ -5,7 +5,6 @@ import 'package:squip/views/signup_view.dart';
 import 'package:squip/views/user_homeview.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
-
 import '../views/ambulance_view.dart';
 import '../views/firebrigade_view.dart';
 import '../views/police_view.dart';

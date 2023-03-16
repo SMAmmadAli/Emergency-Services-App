@@ -45,6 +45,8 @@ dependencies:
   flutter_phone_direct_caller: ^2.1.1
   url_launcher: ^6.1.10
   dropdown_button2: ^2.0.0
+  build_runner: ^2.3.3
+  build: ^2.3.1
 
 
 dev_dependencies:
@@ -58,7 +60,6 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
   stacked_generator: ^0.9.4
-  build_runner: ^2.3.3
 
 
 # For information on the generic Dart part of this file, see the

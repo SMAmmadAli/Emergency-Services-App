@@ -33,8 +33,8 @@ class FireBrigadeViewModel extends BaseViewModel {
   FirebaseAuth _auth = FirebaseAuth.instance;
   addData() async {
     _firestore
-        .collection("User Data")
-        .doc('information')
+        .collection("Firebrigade User")
+        .doc('User To firebrigade')
         .collection("${_auth.currentUser!.uid}")
         .add({"name": name.text, "location": location.text});
     print("Added");

@@ -35,10 +35,10 @@ class PoliceViewModel extends BaseViewModel {
   FirebaseAuth _auth = FirebaseAuth.instance;
   addData() async {
     _firestore
-        .collection("User Data")
-        .doc('Task Data')
+        .collection("Police Users")
+        .doc('User To Police')
         .collection("${_auth.currentUser!.uid}")
-        .add({"name": name.text, "task": location.text});
+        .add({"name": name.text, "location": location.text});
     name.clear();
     location.clear();
   }

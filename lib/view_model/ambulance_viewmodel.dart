@@ -34,8 +34,8 @@ class AmbulanceViewModel extends BaseViewModel {
   FirebaseAuth _auth = FirebaseAuth.instance;
   addData() async {
     _firestore
-        .collection("User Data")
-        .doc('Task Data')
+        .collection("Ambulance Users")
+        .doc('User To Ambulance')
         .collection("${_auth.currentUser!.uid}")
         .add({"name": name.text, "task": location.text});
     name.clear();

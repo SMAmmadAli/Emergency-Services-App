@@ -8,6 +8,9 @@ class MyText {
   static String signUp = "Signup";
   static String password = "Password";
   static String treeText = "Emergency Service";
+  static String policeservice = "Police Emergency Service";
+  static String fireservice = "Fire Brigade Emergency Service";
+  static String ambservice = "Ambulance Emergency Service";
   static String UserScreen = "User Screen";
   static String userScreenText1 = "instant help.";
   static String loginSentence = "";

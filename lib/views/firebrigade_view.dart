@@ -4,6 +4,9 @@ import 'package:squip/view_model/firebrigade_viewmodel.dart';
 import 'package:squip/widgets/user_form.dart';
 import 'package:stacked/stacked.dart';
 
+import '../utils/text.dart';
+import '../widgets/user_text.dart';
+
 class FireBrigadeView extends StatelessWidget {
   FireBrigadeView({super.key});
 
@@ -39,13 +42,29 @@ class FireBrigadeView extends StatelessWidget {
                       )),
                 ],
               ),
-              body: UserForm(
-                items: viewModel.itemsList,
-                myController1: viewModel.name,
-                myController2: viewModel.location,
-                added: () {
-                  viewModel.addData();
-                },
+              body: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20.0),
+                    child: UserText(
+                      text: MyText.fireservice,
+                      color: MyColor.greyBlack,
+                      letterSpacing: 2,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  UserForm(
+                    items: viewModel.itemsList,
+                    myController1: viewModel.name,
+                    myController2: viewModel.location,
+                    hintText: "please select option",
+                    added: () {
+                      viewModel.addData();
+                    },
+                  ),
+                ],
               ));
         });
   }

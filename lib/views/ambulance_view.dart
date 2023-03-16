@@ -6,6 +6,9 @@ import 'package:squip/view_model/firebrigade_viewmodel.dart';
 import 'package:squip/widgets/user_form.dart';
 import 'package:stacked/stacked.dart';
 
+import '../utils/text.dart';
+import '../widgets/user_text.dart';
+
 class AmbulanceView extends StatelessWidget {
   const AmbulanceView({super.key});
 
@@ -42,13 +45,26 @@ class AmbulanceView extends StatelessWidget {
                       )),
                 ],
               ),
-              body: UserForm(
-                items: viewModel.itemsList,
-                myController1: viewModel.name,
-                myController2: viewModel.location,
-                added: () {
-                  viewModel.addData();
-                },
+              body: Column(
+                children: [
+                  UserText(
+                    text: MyText.ambservice,
+                    color: MyColor.greyBlack,
+                    letterSpacing: 2,
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  UserForm(
+                    items: viewModel.itemsList,
+                    myController1: viewModel.name,
+                    myController2: viewModel.location,
+                    hintText: 'Select any option',
+                    added: () {
+                      viewModel.addData();
+                    },
+                  ),
+                ],
               ));
         });
   }

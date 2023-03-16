@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class UserContainer extends StatelessWidget {
   final String text;
   final Color color;
-  final newScreen;
+  final Function newScreen;
   const UserContainer(
       {super.key,
       required this.text,

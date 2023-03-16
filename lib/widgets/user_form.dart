@@ -2,6 +2,7 @@ import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 
 class UserForm extends StatelessWidget {
+  final String hintText;
   final Function added;
   final List<String> items;
   String? selectedValue;
@@ -14,7 +15,8 @@ class UserForm extends StatelessWidget {
       required this.items,
       required this.myController1,
       required this.myController2,
-      required this.added});
+      required this.added,
+      required this.hintText});
 
   @override
   Widget build(BuildContext context) {
@@ -65,9 +67,9 @@ class UserForm extends StatelessWidget {
                 ),
               ),
               isExpanded: true,
-              hint: const Text(
-                'Select the condition of fire',
-                style: TextStyle(fontSize: 14),
+              hint: Text(
+                hintText,
+                style: const TextStyle(fontSize: 14),
               ),
               items: items
                   .map((item) => DropdownMenuItem<String>(
@@ -82,7 +84,7 @@ class UserForm extends StatelessWidget {
                   .toList(),
               validator: (value) {
                 if (value == null) {
-                  return 'Please select the condition of fire';
+                  return 'please select any';
                 }
                 return null;
               },
@@ -117,7 +119,7 @@ class UserForm extends StatelessWidget {
                   _formKey.currentState!.save();
                 }
               },
-              child: const Text('Submit Button'),
+              child: const Text('Submit complaint'),
             ),
           ],
         ),

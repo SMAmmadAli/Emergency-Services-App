@@ -77,21 +77,13 @@ class UserHomeView extends StatelessWidget {
                       text: MyText.ambulance,
                       color: MyColor.greyBlack,
                       newScreen: () {
-                        viewModel.navigateToFire();
+                        viewModel.navigateToAmbulance();
                       },
                     ))
                   ],
                 ),
               ),
             ),
-
-            // body: Center(
-            //   child: ElevatedButton(
-            //       onPressed: () {
-            //         FlutterPhoneDirectCaller.callNumber("+923308465535");
-            //       },
-            //       child: const Text("Call")),
-            // ),
           );
         });
   }
